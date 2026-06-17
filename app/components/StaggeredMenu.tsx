@@ -1,4 +1,4 @@
-﻿import React, { useCallback, useLayoutEffect, useRef, useState, useEffect } from 'react';
+import React, { useCallback, useLayoutEffect, useRef, useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { gsap } from 'gsap';
 import TransitionLink from './TransitionLink';
@@ -105,10 +105,9 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       gsap.set(plusV, { transformOrigin: '50% 50%', rotate: 90 });
       gsap.set(icon, { rotate: 0, transformOrigin: '50% 50%' });
       gsap.set(textInner, { yPercent: 0 });
-      if (toggleBtnRef.current) gsap.set(toggleBtnRef.current, { color: menuButtonColor });
     });
     return () => ctx.revert();
-  }, [menuButtonColor, position, mounted]);
+  }, [position, mounted]);
 
   const buildOpenTimeline = useCallback(() => {
     const panel = panelRef.current;
@@ -392,6 +391,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [closeOnClickAway, open, closeMenu]);
+
+
 
   const menuContent = (
     <div className="staggered-menu-portal" data-position={position} data-open={open || undefined} style={accentColor ? { ['--sm-accent' as any]: accentColor } : undefined}>

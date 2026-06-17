@@ -16,7 +16,7 @@ export default function ApplyPage() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          video.play().catch(() => {});
+          video.play().catch(() => { });
         } else {
           video.pause();
         }
@@ -56,8 +56,8 @@ export default function ApplyPage() {
   };
 
   return (
-    <main className="relative w-full min-h-[100vh] flex flex-col font-sans pt-32 pb-24 px-6 overflow-hidden text-slate-900">
-      
+    <main className="relative w-full min-h-[100vh] flex flex-col font-sans pt-32 pb-24 px-6 overflow-x-hidden text-slate-900">
+
       {/* Background Video - Restored Zynkk Vibe */}
       <div className="fixed top-0 left-0 w-full h-[100vh] -z-10 overflow-hidden bg-[#e6ebf5]">
         <video
@@ -72,24 +72,24 @@ export default function ApplyPage() {
           <source src="/background-video-jan-28.mp4" type="video/mp4" />
         </video>
       </div>
-      
+
       <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col lg:flex-row gap-16">
-        
+
         {/* Left Side: Information - Restored Zynkk Vibe */}
         <div className="w-full lg:w-5/12 pt-8">
-          
+
           <div className="flex items-center gap-6 text-slate-900 font-mono text-[13px] font-bold tracking-tight pb-2 mb-8 w-max">
             <span>[A] Apply</span>
             <span>[I] Internship</span>
           </div>
 
           <h1 className="text-[56px] font-bold tracking-tight text-slate-900 mb-6 leading-tight">
-            Launch your <br/> tech career.
+            Launch your <br /> tech career.
           </h1>
           <p className="text-[18px] text-slate-600 font-medium mb-10 leading-relaxed max-w-md">
             Join the Zynkk Academy to build enterprise-grade simulated projects, receive mentorship from senior engineers, and earn verifiable credentials.
           </p>
-          
+
           <div className="space-y-8">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 bg-white border border-[#0C2A92]/20 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
@@ -120,9 +120,9 @@ export default function ApplyPage() {
         {/* Right Side: Form */}
         <div className="w-full lg:w-7/12">
           <div className="bg-transparent border-0 rounded-none p-4 md:p-8">
-            
+
             <form className="w-full flex flex-col gap-12" onSubmit={handleSubmit}>
-              
+
               {/* Section 1: Personal Information */}
               <div className="flex flex-col gap-8">
                 <div className="flex items-baseline gap-3 mb-2">
@@ -131,7 +131,7 @@ export default function ApplyPage() {
                     Personal Information
                   </h2>
                 </div>
-                
+
                 <div className="flex flex-col gap-6">
                   {/* Row 1 */}
                   <div className="flex flex-col md:flex-row gap-6 md:gap-12">
@@ -185,7 +185,7 @@ export default function ApplyPage() {
                         <option value="Graduated">Graduated</option>
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pt-4 text-slate-400">
-                        <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                        <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
                       </div>
                     </div>
                   </div>
@@ -200,7 +200,7 @@ export default function ApplyPage() {
                     Role Selection
                   </h2>
                 </div>
-                
+
                 <div className="flex flex-col gap-6">
                   <div className="flex flex-col md:flex-row gap-6 md:gap-12">
                     <div className="w-full relative">
@@ -210,9 +210,10 @@ export default function ApplyPage() {
                         <option value="backend">Backend Developer</option>
                         <option value="fullstack">Full Stack Developer</option>
                         <option value="uiux">UI/UX Designer</option>
+                        <option value="aiml">AI & Machine Learning Engineer</option>
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pt-4 text-slate-400">
-                        <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                        <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
                       </div>
                     </div>
                     <div className="w-full relative">
@@ -220,7 +221,7 @@ export default function ApplyPage() {
                       <input type="url" name="portfolio" className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] placeholder-slate-400 focus:outline-none focus:border-[#0a0f24] transition-colors" placeholder="https://..." />
                     </div>
                   </div>
-                  
+
                   <div className="flex flex-col md:flex-row gap-6 md:gap-12 mt-2">
                     <div className="w-full relative">
                       <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Resume / CV</label>
@@ -247,11 +248,21 @@ export default function ApplyPage() {
               )}
 
               <div className="mt-4">
-                <button type="submit" disabled={isLoading} className="w-full bg-[#0a0f24] text-white text-[14px] font-bold tracking-widest uppercase px-12 py-5 rounded-none hover:bg-black transition-all shadow-none active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed">
-                  {isLoading ? "Sending..." : "Submit Application"}
+                <button type="submit" disabled={isLoading} className="w-full bg-[#0a0f24] text-white text-[14px] font-bold tracking-widest uppercase px-12 py-5 rounded-none hover:bg-black transition-all shadow-none active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+                  {isLoading ? (
+                    <span className="flex items-center gap-2">
+                      <svg className="animate-spin h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                      </svg>
+                      Sending...
+                    </span>
+                  ) : (
+                    "Submit Application"
+                  )}
                 </button>
               </div>
-              
+
             </form>
           </div>
         </div>

@@ -1,4 +1,4 @@
-﻿import TransitionLink from "./TransitionLink";
+import TransitionLink from "./TransitionLink";
 
 export default function Footer() {
   return (
