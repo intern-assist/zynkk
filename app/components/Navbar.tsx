@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
@@ -105,7 +105,7 @@ export default function Navbar() {
   const isWhiteText = isDarkTheme && !isMobileMenuOpen;
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 py-4 transition-transform duration-300 ${isScrolled && scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 py-4 transition-transform duration-300 ${isScrolled && scrollDirection === "down" && !isMobileMenuOpen ? "-translate-y-full" : "translate-y-0"}`}>
       <div
         className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
           isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -113,9 +113,9 @@ export default function Navbar() {
       />
 
       <div className={`relative w-full px-6 md:px-8 flex items-center justify-between transition-colors duration-500 ${isWhiteText ? 'text-white' : 'text-slate-900'}`}>
-        <TransitionLink href="/" className="flex items-center gap-0.5 cursor-pointer select-none z-50">
+        <TransitionLink href="/" className="flex items-center cursor-pointer select-none z-50">
           <svg
-            className="w-9 h-9 transition-colors duration-500"
+            className="w-[50px] h-[50px] md:w-[68px] md:h-[68px] transition-colors duration-500"
             viewBox="0 0 24 24"
             fill="currentColor"
           >
@@ -125,13 +125,10 @@ export default function Navbar() {
             <polygon points="12,8 15,3 13,11" opacity="0.65" />
             <polygon points="6,14 2,16 5,13" />
           </svg>
-          <span className="text-xl font-bold tracking-tight transition-colors duration-500">
-            Zynkk
-          </span>
         </TransitionLink>
 
         {/* Desktop Navigation */}
-        <nav className="absolute left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-8 text-[14px] font-bold">
+        <nav className="absolute left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-8 text-[14px] font-medium">
           <TransitionLink href="/services" className={`transition-opacity hover:opacity-70`}>Services</TransitionLink>
           <TransitionLink href="/internships" className={`transition-opacity hover:opacity-70`}>Internships</TransitionLink>
           <TransitionLink href="/about" className={`transition-opacity hover:opacity-70`}>About Us</TransitionLink>

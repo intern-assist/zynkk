@@ -1,10 +1,12 @@
-﻿"use client";
+"use client";
 
 import TransitionLink from "../components/TransitionLink";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function FAQPage() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [openClientFaq, setOpenClientFaq] = useState<number | null>(null);
+  const [openInternFaq, setOpenInternFaq] = useState<number | null>(null);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -40,7 +42,7 @@ export default function FAQPage() {
   ];
 
   return (
-    <main className="relative w-full min-h-dvh flex flex-col font-sans pt-32 pb-24 px-6 overflow-hidden text-slate-900">
+    <main className="relative w-full min-h-dvh flex flex-col font-sans pt-24 md:pt-32 pb-24 px-4 sm:px-6 overflow-x-hidden text-slate-900">
       
       {/* Background Video */}
       <div className="fixed top-0 left-0 w-full h-[100vh] -z-10 overflow-hidden bg-[#e6ebf5]">
@@ -67,17 +69,17 @@ export default function FAQPage() {
           </div>
         </div>
 
-        <div className="text-center mb-24 max-w-2xl mx-auto">
-          <h1 className="text-[56px] md:text-[72px] font-bold tracking-tight text-slate-900 mb-6 leading-tight">
+        <div className="text-center mt-4 mb-16 md:mb-24 max-w-2xl mx-auto px-2">
+          <h1 className="text-[36px] sm:text-[56px] md:text-[72px] font-bold tracking-tight text-slate-900 mb-6 leading-tight">
             Frequently Asked Questions
           </h1>
-          <p className="text-[20px] text-slate-600 font-medium">
+          <p className="text-[17px] sm:text-[20px] text-slate-600 font-medium">
             Find answers to common questions about our agency services and internship programs.
           </p>
         </div>
 
         {/* Notion Toggle Lists */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
           
           <div>
             <h2 className="text-[13px] font-mono text-[#0C2A92] font-bold mb-6 tracking-wider uppercase flex items-center gap-2">
@@ -85,19 +87,29 @@ export default function FAQPage() {
               For Clients
             </h2>
             <div className="flex flex-col border-t border-[#0C2A92]/20">
-              {clientFaqs.map((faq, i) => (
-                <details key={i} className="group border-b border-[#0C2A92]/20 bg-white/50 backdrop-blur-sm">
-                  <summary className="flex items-center justify-between cursor-pointer py-4 px-2 text-[15px] font-bold text-slate-900 hover:bg-[#0C2A92]/5 transition-colors list-none [&::-webkit-details-marker]:hidden">
-                    {faq.q}
-                    <span className="transition-transform duration-200 group-open:rotate-90 text-[#0C2A92]">
-                      <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" viewBox="0 0 24 24" width="16"><path d="M9 18l6-6-6-6"></path></svg>
-                    </span>
-                  </summary>
-                  <div className="pb-5 px-2 text-slate-600 font-medium text-[14px] leading-relaxed pr-8 border-l-2 border-[#0C2A92]/20 ml-3 mb-2">
-                    {faq.a}
+              {clientFaqs.map((faq, i) => {
+                const isOpen = openClientFaq === i;
+                return (
+                  <div key={i} className="border-b border-[#0C2A92]/20">
+                    <button
+                      onClick={() => setOpenClientFaq(isOpen ? null : i)}
+                      className="w-full flex items-center justify-between py-5 text-left text-[15px] font-bold text-slate-800 hover:text-[#0C2A92] transition-colors cursor-pointer"
+                    >
+                      <span className="pr-4">{faq.q}</span>
+                      <span className={`transform transition-transform duration-300 text-slate-500 text-sm shrink-0 ${isOpen ? "rotate-180" : ""}`}>
+                        ▼
+                      </span>
+                    </button>
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-48 opacity-100 pb-5" : "max-h-0 opacity-0"}`}
+                    >
+                      <p className="text-slate-600 text-[13px] sm:text-[14px] leading-relaxed pr-2 sm:pr-8 font-medium">
+                        {faq.a}
+                      </p>
+                    </div>
                   </div>
-                </details>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -107,31 +119,43 @@ export default function FAQPage() {
               For Interns
             </h2>
             <div className="flex flex-col border-t border-[#0C2A92]/20">
-              {internFaqs.map((faq, i) => (
-                <details key={i} className="group border-b border-[#0C2A92]/20 bg-white/50 backdrop-blur-sm">
-                  <summary className="flex items-center justify-between cursor-pointer py-4 px-2 text-[15px] font-bold text-slate-900 hover:bg-[#0C2A92]/5 transition-colors list-none [&::-webkit-details-marker]:hidden">
-                    {faq.q}
-                    <span className="transition-transform duration-200 group-open:rotate-90 text-[#0C2A92]">
-                      <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" viewBox="0 0 24 24" width="16"><path d="M9 18l6-6-6-6"></path></svg>
-                    </span>
-                  </summary>
-                  <div className="pb-5 px-2 text-slate-600 font-medium text-[14px] leading-relaxed pr-8 border-l-2 border-[#0C2A92]/20 ml-3 mb-2">
-                    {faq.a}
+              {internFaqs.map((faq, i) => {
+                const isOpen = openInternFaq === i;
+                return (
+                  <div key={i} className="border-b border-[#0C2A92]/20">
+                    <button
+                      onClick={() => setOpenInternFaq(isOpen ? null : i)}
+                      className="w-full flex items-center justify-between py-5 text-left text-[15px] font-bold text-slate-800 hover:text-[#0C2A92] transition-colors cursor-pointer"
+                    >
+                      <span className="pr-4">{faq.q}</span>
+                      <span className={`transform transition-transform duration-300 text-slate-500 text-sm shrink-0 ${isOpen ? "rotate-180" : ""}`}>
+                        ▼
+                      </span>
+                    </button>
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-48 opacity-100 pb-5" : "max-h-0 opacity-0"}`}
+                    >
+                      <p className="text-slate-600 text-[13px] sm:text-[14px] leading-relaxed pr-2 sm:pr-8 font-medium">
+                        {faq.a}
+                      </p>
+                    </div>
                   </div>
-                </details>
-              ))}
+                );
+              })}
             </div>
           </div>
 
         </div>
 
         {/* Info Banner */}
-        <div className="mt-32 flex justify-center">
-          <div className="flex items-center gap-3 bg-white border border-[#0C2A92]/30 px-6 py-4 rounded-full shadow-lg text-slate-900 text-[13px] font-bold">
+        <div className="mt-24 md:mt-32 flex justify-center px-2">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-white border border-[#0C2A92]/30 px-5 py-3.5 sm:py-4 rounded-2xl sm:rounded-full shadow-lg text-slate-900 text-[13px] font-bold text-center sm:text-left">
             <div className="w-[20px] h-[20px] rounded-full bg-[#0C2A92] text-white flex items-center justify-center flex-shrink-0">
               <svg className="w-[12px] h-[12px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             </div>
-            Have a different question? <TransitionLink href="/contact" className="text-[#0C2A92] hover:underline">Contact our support team.</TransitionLink>
+            <span>
+              Have a different question? <TransitionLink href="/contact" className="text-[#0C2A92] hover:underline whitespace-nowrap">Contact our support team.</TransitionLink>
+            </span>
           </div>
         </div>
 
