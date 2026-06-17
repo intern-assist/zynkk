@@ -133,7 +133,11 @@ export default function Home() {
               Zynkk
             </h1>
 
-            <p className="text-[20px] md:text-[22px] text-slate-800 mt-4 max-w-2xl font-normal tracking-tight leading-normal">
+            <div className="text-[11px] md:text-[13px] font-bold tracking-[0.25em] text-slate-500 uppercase mt-5 select-none">
+              FOR FUTURE BUILDERS
+            </div>
+
+            <p className="text-[20px] md:text-[22px] text-slate-800 mt-5 max-w-2xl font-normal tracking-tight leading-normal">
               Building premium web solutions for modern brands, and training the next generation of engineers.
             </p>
 

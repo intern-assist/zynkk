@@ -113,7 +113,7 @@ export default function Navbar() {
       />
 
       <div className={`relative w-full px-6 md:px-8 flex items-center justify-between transition-colors duration-500 ${isWhiteText ? 'text-white' : 'text-slate-900'}`}>
-        <TransitionLink href="/" className="flex items-center cursor-pointer select-none z-50">
+        <TransitionLink href="/" className="flex items-center cursor-pointer select-none z-50 group">
           <svg
             className="w-[50px] h-[50px] md:w-[68px] md:h-[68px] transition-colors duration-500"
             viewBox="0 0 24 24"
