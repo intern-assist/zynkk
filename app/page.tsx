@@ -68,27 +68,33 @@ export default function Home() {
     return () => observer.unobserve(sentinel);
   }, []);
 
+  // Pause the video when it's no longer visible (user scrolled past hero).
+  // CRITICAL: We observe the heroSentinel (a normal scrolling element at ~85vh),
+  // NOT the video itself. The video is position:fixed so it's always "in viewport"
+  // and the observer would never trigger pause — causing continuous video decode
+  // competing with Lenis + GSAP throughout the entire page scroll.
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
+    const sentinel = heroSentinelRef.current;
+    if (!video || !sentinel) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          // Hero area is visible → play video
           video.play().catch((err) => {
             console.log("Autoplay prevented:", err);
           });
         } else {
+          // User scrolled past hero → pause video to free up CPU
           video.pause();
         }
       },
-      { threshold: 0.05 }
+      { threshold: 0 }
     );
 
-    observer.observe(video);
-    return () => {
-      observer.unobserve(video);
-    };
+    observer.observe(sentinel);
+    return () => observer.disconnect();
   }, []);
 
   return (
