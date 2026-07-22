@@ -138,6 +138,9 @@
   pointer-events: auto;
   opacity: 0;
   will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 [data-position='left'] .staggered-menu-panel {
@@ -170,6 +173,8 @@
   transform: translateX(0);
   opacity: 0;
   will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .sm-panel-inner {
@@ -303,6 +308,9 @@
   display: inline-block;
   will-change: transform;
   transform-origin: 50% 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .sm-panel-item:hover {

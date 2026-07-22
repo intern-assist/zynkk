@@ -148,7 +148,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     const tl = gsap.timeline({ paused: true });
 
     layerStates.forEach((ls, i) => {
-      tl.fromTo(ls.el, { xPercent: ls.start }, { xPercent: 0, duration: 0.35, ease: 'power3.out' }, i * 0.05);
+      tl.fromTo(ls.el, { xPercent: ls.start }, { xPercent: 0, duration: 0.35, ease: 'power3.out', force3D: true }, i * 0.05);
     });
     const lastTime = layerStates.length ? (layerStates.length - 1) * 0.05 : 0;
     const panelInsertTime = lastTime + (layerStates.length ? 0.05 : 0);
@@ -156,7 +156,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     tl.fromTo(
       panel,
       { xPercent: panelStart },
-      { xPercent: 0, duration: panelDuration, ease: 'power3.out' },
+      { xPercent: 0, duration: panelDuration, ease: 'power3.out', force3D: true },
       panelInsertTime
     );
 
@@ -170,6 +170,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           rotate: 0,
           duration: 0.5,
           ease: 'power3.out',
+          force3D: true,
           stagger: { each: 0.05, from: 'start' }
         },
         itemsStart
@@ -181,6 +182,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             duration: 0.4,
             ease: 'power2.out',
             '--sm-num-opacity': 1,
+            force3D: true,
             stagger: { each: 0.05, from: 'start' }
           },
           itemsStart + 0.05
@@ -253,6 +255,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       xPercent: offscreen,
       duration: 0.32,
       ease: 'power3.in',
+      force3D: true,
       overwrite: 'auto',
       onComplete: () => {
         const itemEls = Array.from(panel.querySelectorAll('.sm-panel-itemLabel')) as HTMLElement[];
