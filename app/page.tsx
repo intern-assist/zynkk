@@ -190,7 +190,7 @@ export default function Home() {
         </div>
 
         {/* ================= DIVISION A: ZYNKK STUDIO ================= */}
-        <div className="w-full relative bg-black" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 1200px' }}>
+        <div className="w-full relative bg-black">
           <div className="w-full pt-20 pb-28 px-6 flex flex-col items-center">
 
             <div className="inline-block px-3 md:px-4 py-1 md:py-1.5 rounded-full border border-white/10 bg-white/5 text-white/70 text-[11px] md:text-[13px] font-mono mb-6 tracking-normal md:tracking-wider whitespace-nowrap max-w-full text-center">
@@ -323,7 +323,7 @@ export default function Home() {
         </div>
 
         {/* ================= DIVISION B: ZYNKK ACADEMY (INTERNSHIPS) ================= */}
-        <div className="w-full bg-black" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 1400px' }}>
+        <div className="w-full bg-black">
           <div className="w-full py-20 px-6 flex flex-col items-center">
 
             <div className="inline-block px-3 md:px-4 py-1 md:py-1.5 rounded-full border border-white/10 bg-white/5 text-white/70 text-[11px] md:text-[13px] font-mono mb-6 tracking-normal md:tracking-wider whitespace-nowrap max-w-full text-center">
@@ -457,7 +457,7 @@ export default function Home() {
         </div>
 
         {/* ================= OPEN ACADEMY TRACKS ================= */}
-        <div className="w-full bg-black py-24 border-t border-white/5" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 800px' }}>
+        <div className="w-full bg-black py-24 border-t border-white/5">
           <div className="w-full max-w-6xl mx-auto px-6 mb-12">
             <h2 className="text-[36px] md:text-[40px] font-medium tracking-tight text-white text-center">Open Academy Tracks</h2>
           </div>
