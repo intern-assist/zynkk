@@ -1,4 +1,4 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
 
 :root {
   --background: #050508;
@@ -50,6 +50,7 @@
 }
 
 html {
+  scroll-behavior: smooth;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
   overscroll-behavior-y: none; /* Block vertical bounce but allow horizontal history swipe gestures */
