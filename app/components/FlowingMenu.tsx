@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
@@ -126,6 +126,9 @@ const MenuItem: React.FC<MenuItemProps> = ({
         ease: 'none',
         repeat: -1
       });
+
+      // Pause by default — IntersectionObserver will resume when visible
+      animationRef.current.pause();
     };
 
     const timer = setTimeout(setupMarquee, 100);
@@ -136,6 +139,28 @@ const MenuItem: React.FC<MenuItemProps> = ({
       }
     };
   }, [text, image, repetitions, speed]);
+
+  // Pause/resume marquee based on visibility to save rAF cycles
+  useEffect(() => {
+    const el = itemRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (animationRef.current) {
+          if (entry.isIntersecting) {
+            animationRef.current.resume();
+          } else {
+            animationRef.current.pause();
+          }
+        }
+      },
+      { threshold: 0 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const handleMouseEnter = (ev: React.MouseEvent<HTMLAnchorElement>) => {
     if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;

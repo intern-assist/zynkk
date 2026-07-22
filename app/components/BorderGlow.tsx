@@ -95,17 +95,21 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
     updateCachedRect();
   }, [updateCachedRect]);
 
-  const handlePointerMove = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
+  const pendingPointerRef = useRef<{ x: number; y: number } | null>(null);
+  const rafIdRef = useRef<number | null>(null);
+
+  const processPointerMove = useCallback(() => {
     const card = cardRef.current;
-    if (!card) return;
+    const pointer = pendingPointerRef.current;
+    if (!card || !pointer) return;
 
     if (!rectRef.current) {
       rectRef.current = card.getBoundingClientRect();
     }
 
     const rect = rectRef.current;
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const x = pointer.x - rect.left;
+    const y = pointer.y - rect.top;
 
     const cx = rect.width / 2;
     const cy = rect.height / 2;
@@ -126,15 +130,28 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
       angle = degrees;
     }
 
-    card.style.setProperty('--edge-proximity', `${(edge * 100).toFixed(3)}`);
-    card.style.setProperty('--cursor-angle', `${angle.toFixed(3)}deg`);
+    card.style.setProperty('--edge-proximity', `${(edge * 100).toFixed(1)}`);
+    card.style.setProperty('--cursor-angle', `${angle.toFixed(1)}deg`);
+
+    pendingPointerRef.current = null;
+    rafIdRef.current = null;
   }, []);
+
+  const handlePointerMove = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
+    pendingPointerRef.current = { x: e.clientX, y: e.clientY };
+    if (rafIdRef.current === null) {
+      rafIdRef.current = requestAnimationFrame(processPointerMove);
+    }
+  }, [processPointerMove]);
 
   useEffect(() => {
     updateCachedRect();
     window.addEventListener('resize', updateCachedRect);
     return () => {
       window.removeEventListener('resize', updateCachedRect);
+      if (rafIdRef.current !== null) {
+        cancelAnimationFrame(rafIdRef.current);
+      }
     };
   }, [updateCachedRect]);
 

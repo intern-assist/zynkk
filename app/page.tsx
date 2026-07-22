@@ -95,9 +95,10 @@ export default function Home() {
     <main className="relative w-full min-h-dvh flex flex-col font-sans selection:bg-zinc-600 overflow-x-hidden">
 
       {/* ================= BACKGROUND VIDEO (FIXED) ================= */}
-      <div className="fixed top-0 left-0 w-full h-[100vh] -z-10 overflow-hidden bg-[#e6ebf5] transform-gpu will-change-transform">
+      <div className="fixed top-0 left-0 w-full h-[100vh] -z-10 overflow-hidden bg-[#e6ebf5]">
         <video
           ref={videoRef}
+          autoPlay
           loop
           muted
           playsInline
@@ -157,11 +158,11 @@ export default function Home() {
 
             {/* Trusted Teams / Graduates Hired By */}
             <div className="w-full flex flex-col items-center mt-[90px]">
-              <span className="text-[14px] font-normal text-slate-800/60 tracking-normal mb-8 mix-blend-multiply">
+              <span className="text-[14px] font-normal text-slate-800/60 tracking-normal mb-8">
                 Top teams choose Zynkk and hire our graduates
               </span>
 
-              <div className="flex flex-wrap items-center justify-center gap-x-14 gap-y-8 max-w-6xl opacity-70 mix-blend-multiply text-slate-900">
+              <div className="flex flex-wrap items-center justify-center gap-x-14 gap-y-8 max-w-6xl opacity-70 text-slate-900">
                 <div className="flex items-center font-extrabold text-[28px] tracking-tight select-none hover:scale-105 transition-transform duration-200 cursor-pointer">
                   <span>duo</span>lingo
                 </div>
@@ -189,7 +190,7 @@ export default function Home() {
         </div>
 
         {/* ================= DIVISION A: ZYNKK STUDIO ================= */}
-        <div className="w-full relative bg-black">
+        <div className="w-full relative bg-black" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 1200px' }}>
           <div className="w-full pt-20 pb-28 px-6 flex flex-col items-center">
 
             <div className="inline-block px-3 md:px-4 py-1 md:py-1.5 rounded-full border border-white/10 bg-white/5 text-white/70 text-[11px] md:text-[13px] font-mono mb-6 tracking-normal md:tracking-wider whitespace-nowrap max-w-full text-center">
@@ -322,7 +323,7 @@ export default function Home() {
         </div>
 
         {/* ================= DIVISION B: ZYNKK ACADEMY (INTERNSHIPS) ================= */}
-        <div className="w-full bg-black">
+        <div className="w-full bg-black" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 1400px' }}>
           <div className="w-full py-20 px-6 flex flex-col items-center">
 
             <div className="inline-block px-3 md:px-4 py-1 md:py-1.5 rounded-full border border-white/10 bg-white/5 text-white/70 text-[11px] md:text-[13px] font-mono mb-6 tracking-normal md:tracking-wider whitespace-nowrap max-w-full text-center">
@@ -456,7 +457,7 @@ export default function Home() {
         </div>
 
         {/* ================= OPEN ACADEMY TRACKS ================= */}
-        <div className="w-full bg-black py-24 border-t border-white/5">
+        <div className="w-full bg-black py-24 border-t border-white/5" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 800px' }}>
           <div className="w-full max-w-6xl mx-auto px-6 mb-12">
             <h2 className="text-[36px] md:text-[40px] font-medium tracking-tight text-white text-center">Open Academy Tracks</h2>
           </div>
@@ -713,7 +714,7 @@ export default function Home() {
           </div>
 
           <div className="w-full max-w-4xl rounded-[24px] overflow-hidden shadow-[0_0_50px_rgba(99,102,241,0.1)] border border-white/10 hover:shadow-[0_0_80px_rgba(99,102,241,0.2)] transition-shadow duration-500">
-            <img src="/zaynab.png" alt="Zaynab Certificate" className="w-full h-auto object-cover block" />
+            <img src="/zaynab.png" alt="Zaynab Certificate" className="w-full h-auto object-cover block" loading="lazy" decoding="async" />
           </div>
           <p className="text-white/40 text-[14px] mt-8 font-light tracking-wide">* Certificates are digitally verifiable and shareable directly to LinkedIn profiles.</p>
         </div>
