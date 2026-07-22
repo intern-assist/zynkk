@@ -95,7 +95,7 @@ export default function Home() {
     <main className="relative w-full min-h-dvh flex flex-col font-sans selection:bg-zinc-600 overflow-x-hidden">
 
       {/* ================= BACKGROUND VIDEO (FIXED) ================= */}
-      <div className="fixed top-0 left-0 w-full h-[100vh] -z-10 overflow-hidden bg-[#e6ebf5]">
+      <div className="fixed top-0 left-0 w-full h-[100vh] -z-10 overflow-hidden bg-[#e6ebf5] transform-gpu will-change-transform">
         <video
           ref={videoRef}
           autoPlay
@@ -103,7 +103,7 @@ export default function Home() {
           muted
           playsInline
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none transform-gpu will-change-transform"
         >
           <source src="/background-video-jan-28.mp4" type="video/mp4" />
         </video>
