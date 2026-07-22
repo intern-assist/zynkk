@@ -15,6 +15,7 @@
   border: 1px solid rgb(255 255 255 / 15%);
   background: var(--card-bg, #120F17);
   overflow: visible;
+  contain: layout style paint;
   box-shadow:
     rgba(0, 0, 0, 0.1) 0px 1px 2px,
     rgba(0, 0, 0, 0.1) 0px 2px 4px,
@@ -39,7 +40,18 @@
 .border-glow-card:not(:hover):not(.sweep-active)::after,
 .border-glow-card:not(:hover):not(.sweep-active) > .edge-light {
   opacity: 0;
-  transition: opacity 0.75s ease-in-out;
+  visibility: hidden;
+  transition: opacity 0.75s ease-in-out, visibility 0s 0.75s;
+}
+
+.border-glow-card:hover::before,
+.border-glow-card:hover::after,
+.border-glow-card:hover > .edge-light,
+.border-glow-card.sweep-active::before,
+.border-glow-card.sweep-active::after,
+.border-glow-card.sweep-active > .edge-light {
+  visibility: visible;
+  transition: opacity 0.25s ease-out, visibility 0s;
 }
 
 /* colored mesh-gradient border */
