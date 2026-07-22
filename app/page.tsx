@@ -98,11 +98,10 @@ export default function Home() {
       <div className="fixed top-0 left-0 w-full h-[100vh] -z-10 overflow-hidden bg-[#e6ebf5] transform-gpu will-change-transform">
         <video
           ref={videoRef}
-          autoPlay
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           className="absolute inset-0 w-full h-full object-cover pointer-events-none transform-gpu will-change-transform"
         >
           <source src="/background-video-jan-28.mp4" type="video/mp4" />
@@ -158,11 +157,11 @@ export default function Home() {
 
             {/* Trusted Teams / Graduates Hired By */}
             <div className="w-full flex flex-col items-center mt-[90px]">
-              <span className="text-[14px] font-normal text-slate-800/60 tracking-normal mb-8 mix-blend-color-burn">
+              <span className="text-[14px] font-normal text-slate-800/60 tracking-normal mb-8 mix-blend-multiply">
                 Top teams choose Zynkk and hire our graduates
               </span>
 
-              <div className="flex flex-wrap items-center justify-center gap-x-14 gap-y-8 max-w-6xl opacity-70 mix-blend-color-burn text-slate-900">
+              <div className="flex flex-wrap items-center justify-center gap-x-14 gap-y-8 max-w-6xl opacity-70 mix-blend-multiply text-slate-900">
                 <div className="flex items-center font-extrabold text-[28px] tracking-tight select-none hover:scale-105 transition-transform duration-200 cursor-pointer">
                   <span>duo</span>lingo
                 </div>
