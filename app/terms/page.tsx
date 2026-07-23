@@ -66,6 +66,14 @@ export default function TermsAndConditions() {
               <strong className="text-[#0C2A92] font-bold uppercase tracking-wider text-[13px] block mb-1">Important</strong> 
               Zynkk does NOT offer training, coaching, tutorials, video lectures, mentorship sessions, or any form of instructional guidance. Candidates are expected to independently apply their pre-existing technical skills to complete assigned real-world projects.
             </div>
+
+            <h3 className="text-[18px] font-bold text-slate-900 mt-10 mb-4 tracking-tight">Our Philosophy</h3>
+            <p className="mb-4">
+              Zynkk is not designed to teach programming. It is designed to simulate the expectations of modern software teams.
+            </p>
+            <p>
+              Participants are evaluated through independent execution, technical review, engineering practices, and project delivery—not through attendance or classroom participation.
+            </p>
           </section>
 
           <section>
