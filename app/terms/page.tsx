@@ -170,21 +170,43 @@ export default function TermsAndConditions() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
-                <span>Certification is performance-graded and reflects the quality, completeness, and technical rigor of the submitted project.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
-                <span>Upon successful technical review, candidates may opt-in to receive a verified digital credential. The credential verification and issuance fee is ₹199.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
-                <span>Certificates include a unique verification ID that can be publicly validated via our Credential Verification Portal.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
-                <span>Certificates will not be issued if a candidate's submission is found to contain plagiarized, AI-generated (without disclosure), or copied code.</span>
+                <span>Upon successful completion and technical review, participants may optionally request a verified digital credential.</span>
               </li>
             </ul>
+            
+            <p className="mt-6 mb-4 font-bold text-slate-900">
+              Verification and credential issuance: ₹199
+            </p>
+            <p className="mb-4 text-slate-700">
+              This verification fee covers the following services:
+            </p>
+            <ul className="flex flex-col gap-3 pl-2 mb-6">
+              <li className="flex items-start gap-3">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
+                <span><strong className="text-slate-900 font-bold">Engineering review record:</strong> Formal documentation of code quality and technical rigor.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
+                <span><strong className="text-slate-900 font-bold">Credential generation:</strong> Performance-graded digital certificate mapped to your identity.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
+                <span><strong className="text-slate-900 font-bold">Unique verification ID:</strong> Cryptographically secure ID for authenticating your achievement.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
+                <span><strong className="text-slate-900 font-bold">Public verification page:</strong> A dedicated portal for employers to instantly validate your credentials.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
+                <span><strong className="text-slate-900 font-bold">Permanent digital credential:</strong> Lifetime hosting of your verified completion status on our ledger.</span>
+              </li>
+            </ul>
+
+            <div className="p-5 rounded-[16px] border border-[#0C2A92]/20 bg-white shadow-sm text-slate-700 text-[15px]">
+              <strong className="text-[#0C2A92] font-bold uppercase tracking-wider text-[13px] block mb-1">Important</strong> 
+              Credentials will not be issued if a candidate's submission is found to contain plagiarized, AI-generated (without disclosure), or copied code.
+            </div>
           </section>
 
 
@@ -199,7 +221,7 @@ export default function TermsAndConditions() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
-                <span>The credential issuance fee for any domain specialization is ₹199.</span>
+                <span>The verification and credential issuance fee for any domain specialization is ₹199.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
