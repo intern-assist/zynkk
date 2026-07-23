@@ -28,8 +28,8 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-3">
             <span className="text-white font-semibold mb-2">Legal</span>
-            <TransitionLink href="#" className="text-white/60 hover:text-white transition-colors text-[14px]">Privacy Policy</TransitionLink>
-            <TransitionLink href="#" className="text-white/60 hover:text-white transition-colors text-[14px]">Terms of Service</TransitionLink>
+            <TransitionLink href="/privacy" className="text-white/60 hover:text-white transition-colors text-[14px]">Privacy Policy</TransitionLink>
+            <TransitionLink href="/terms" className="text-white/60 hover:text-white transition-colors text-[14px]">Terms of Service</TransitionLink>
           </div>
         </div>
       </div>
