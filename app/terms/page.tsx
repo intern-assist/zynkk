@@ -88,7 +88,7 @@ export default function TermsAndConditions() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
-                <span>Be able to commit to the selected internship duration (30, 60, or 90 days) without interruption.</span>
+                <span>Be able to commit to the selected internship duration without interruption.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
@@ -174,7 +174,7 @@ export default function TermsAndConditions() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
-                <span>Upon successful technical review, candidates may opt-in to receive a verified digital credential. The credential verification and issuance fee is ₹200 (1-Month track), ₹300 (2-Month track), or ₹500 (3-Month track).</span>
+                <span>Upon successful technical review, candidates may opt-in to receive a verified digital credential. The credential verification and issuance fee is ₹199.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
@@ -187,39 +187,10 @@ export default function TermsAndConditions() {
             </ul>
           </section>
 
-          <section>
-            <h2 className="text-[20px] font-bold text-slate-900 mb-4 tracking-tight flex items-center gap-3">
-              <span className="text-[#0C2A92] font-mono text-[15px]">06.</span> Plagiarism & Code Integrity Policy
-            </h2>
-            <p className="mb-4">
-              All project submissions must be original work by the candidate. The following are strictly prohibited:
-            </p>
-            <ul className="flex flex-col gap-3 pl-2 mb-4">
-              <li className="flex items-start gap-3">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
-                <span>Copying code from open-source repositories without significant modifications and attribution.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
-                <span>Submitting code written by another person as your own.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
-                <span>Using AI code generation tools (e.g., GitHub Copilot, ChatGPT) to complete the entirety of the project without disclosure.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
-                <span>Reusing a previously submitted project from another platform or program.</span>
-              </li>
-            </ul>
-            <p>
-              Violation of this policy will result in immediate disqualification, forfeiture of all fees, and permanent banning from future programs.
-            </p>
-          </section>
 
           <section>
             <h2 className="text-[20px] font-bold text-slate-900 mb-4 tracking-tight flex items-center gap-3">
-              <span className="text-[#0C2A92] font-mono text-[15px]">07.</span> Payments & Refund Policy
+              <span className="text-[#0C2A92] font-mono text-[15px]">06.</span> Payments & Refund Policy
             </h2>
             <ul className="flex flex-col gap-3 pl-2">
               <li className="flex items-start gap-3">
@@ -228,7 +199,7 @@ export default function TermsAndConditions() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
-                <span>Credential issuance fees for any domain specialization are: ₹200 for 1 Month, ₹300 for 2 Months, and ₹500 for 3 Months.</span>
+                <span>The credential issuance fee for any domain specialization is ₹199.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0C2A92] shrink-0" />
@@ -247,7 +218,7 @@ export default function TermsAndConditions() {
 
           <section>
             <h2 className="text-[20px] font-bold text-slate-900 mb-4 tracking-tight flex items-center gap-3">
-              <span className="text-[#0C2A92] font-mono text-[15px]">08.</span> Code of Conduct
+              <span className="text-[#0C2A92] font-mono text-[15px]">07.</span> Code of Conduct
             </h2>
             <p className="mb-4">
               All participants are expected to conduct themselves professionally throughout the internship. The following behaviors will lead to immediate disqualification:
@@ -274,7 +245,7 @@ export default function TermsAndConditions() {
 
           <section>
             <h2 className="text-[20px] font-bold text-slate-900 mb-4 tracking-tight flex items-center gap-3">
-              <span className="text-[#0C2A92] font-mono text-[15px]">09.</span> User Responsibilities
+              <span className="text-[#0C2A92] font-mono text-[15px]">08.</span> User Responsibilities
             </h2>
             <p className="mb-4">By using our platform, you agree to:</p>
             <ul className="flex flex-col gap-3 pl-2">
@@ -299,7 +270,7 @@ export default function TermsAndConditions() {
 
           <section>
             <h2 className="text-[20px] font-bold text-slate-900 mb-4 tracking-tight flex items-center gap-3">
-              <span className="text-[#0C2A92] font-mono text-[15px]">10.</span> Intellectual Property
+              <span className="text-[#0C2A92] font-mono text-[15px]">09.</span> Intellectual Property
             </h2>
             <p className="mb-4">
               All platform content including but not limited to branding, assessment briefs, UI/UX design, project templates, and documentation is the exclusive intellectual property of Zynkk. Reproduction, redistribution, or commercial use of any platform content without written consent is strictly prohibited.
@@ -311,7 +282,7 @@ export default function TermsAndConditions() {
 
           <section>
             <h2 className="text-[20px] font-bold text-slate-900 mb-4 tracking-tight flex items-center gap-3">
-              <span className="text-[#0C2A92] font-mono text-[15px]">11.</span> Limitation of Liability
+              <span className="text-[#0C2A92] font-mono text-[15px]">10.</span> Limitation of Liability
             </h2>
             <p className="mb-4">
               To the maximum extent permitted by applicable law, Zynkk shall not be held liable for:
@@ -338,7 +309,7 @@ export default function TermsAndConditions() {
 
           <section>
             <h2 className="text-[20px] font-bold text-slate-900 mb-4 tracking-tight flex items-center gap-3">
-              <span className="text-[#0C2A92] font-mono text-[15px]">12.</span> Termination & Disqualification
+              <span className="text-[#0C2A92] font-mono text-[15px]">11.</span> Termination & Disqualification
             </h2>
             <p className="mb-4">
               Zynkk reserves the right to suspend or permanently terminate a candidate's participation and platform access under the following circumstances:
@@ -372,7 +343,7 @@ export default function TermsAndConditions() {
 
           <section>
             <h2 className="text-[20px] font-bold text-slate-900 mb-4 tracking-tight flex items-center gap-3">
-              <span className="text-[#0C2A92] font-mono text-[15px]">13.</span> Dispute Resolution
+              <span className="text-[#0C2A92] font-mono text-[15px]">12.</span> Dispute Resolution
             </h2>
             <p>
               In the event of a dispute arising from these Terms and Conditions or the internship workflow, both parties agree to first attempt resolution through good-faith communication with our support team. If unresolved within 30 days, the dispute shall be referred to binding arbitration under the laws of India. Both parties waive the right to a jury trial or class-action lawsuit.
@@ -381,7 +352,7 @@ export default function TermsAndConditions() {
 
           <section>
             <h2 className="text-[20px] font-bold text-slate-900 mb-4 tracking-tight flex items-center gap-3">
-              <span className="text-[#0C2A92] font-mono text-[15px]">14.</span> Modifications to Terms
+              <span className="text-[#0C2A92] font-mono text-[15px]">13.</span> Modifications to Terms
             </h2>
             <p>
               Zynkk reserves the right to modify these Terms and Conditions at any time. Changes will be effective immediately upon posting to this page. Continued use of the platform or active participation in an internship program after any update constitutes your acceptance of the revised terms. We recommend checking this page regularly.
@@ -390,7 +361,7 @@ export default function TermsAndConditions() {
 
           <section>
             <h2 className="text-[20px] font-bold text-slate-900 mb-4 tracking-tight flex items-center gap-3">
-              <span className="text-[#0C2A92] font-mono text-[15px]">15.</span> Governing Law
+              <span className="text-[#0C2A92] font-mono text-[15px]">14.</span> Governing Law
             </h2>
             <p>
               These Terms and Conditions shall be governed by and construed in accordance with the laws of the Republic of India. Any legal proceedings arising under or related to these Terms shall be subject to the exclusive jurisdiction of the courts located in India.
@@ -399,7 +370,7 @@ export default function TermsAndConditions() {
 
           <section>
             <h2 className="text-[20px] font-bold text-slate-900 mb-4 tracking-tight flex items-center gap-3">
-              <span className="text-[#0C2A92] font-mono text-[15px]">16.</span> Contact Us
+              <span className="text-[#0C2A92] font-mono text-[15px]">15.</span> Contact Us
             </h2>
             <p className="mb-6">
               If you have any questions, concerns, or legal inquiries regarding these Terms and Conditions, please contact our team:
