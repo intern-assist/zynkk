@@ -137,12 +137,12 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3 z-50">
           <TransitionLink
-            href="/contact"
+            href="/apply"
             className={`hidden md:inline-flex text-[13px] font-bold px-6 py-2.5 rounded-full transition-colors duration-500 shadow-sm ${
               isWhiteText ? 'bg-white text-black hover:bg-gray-200' : 'bg-slate-900 text-white hover:bg-[#0C2A92]'
             }`}
           >
-            Contact Us
+            Apply Now
           </TransitionLink>
 
           {/* Mobile Staggered Menu */}
