@@ -25,6 +25,7 @@ export default function Footer() {
             <TransitionLink href="/services" className="text-white/60 hover:text-white transition-colors text-[14px]">Services</TransitionLink>
             <TransitionLink href="/internships" className="text-white/60 hover:text-white transition-colors text-[14px]">Internships</TransitionLink>
             <TransitionLink href="/apply" className="text-white/60 hover:text-white transition-colors text-[14px]">Apply Now</TransitionLink>
+            <TransitionLink href="/contact" className="text-white/60 hover:text-white transition-colors text-[14px]">Contact Us</TransitionLink>
           </div>
           <div className="flex flex-col gap-3">
             <span className="text-white font-semibold mb-2">Legal</span>
