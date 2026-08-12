@@ -91,6 +91,13 @@ export async function POST(req: NextRequest) {
           </div>
         </div>
       `,
+      text: `
+New Internship Application from ${firstName} ${lastName}.
+Email: ${email}
+Phone: ${phone}
+Target Role: ${role}
+Portfolio: ${portfolio}
+      `,
       attachments,
     };
 
@@ -133,6 +140,19 @@ export async function POST(req: NextRequest) {
             </div>
           </div>
         </div>
+      `,
+      text: `
+Hi ${firstName},
+
+We have successfully received your internship application. Thanks for showing interest in joining the Zynkk team! Our team is currently reviewing your profile and will reach out to you regarding the next steps shortly.
+
+In the meantime, we'd love for you to become a part of our community to stay updated on our latest news, resources, and announcements:
+
+Join our Telegram: https://t.me/+Vn9UY9Up_hk1YjBl
+Follow on LinkedIn: https://www.linkedin.com/company/zynkk-org/
+
+Best regards,
+The Zynkk Team
       `,
     };
 
