@@ -94,8 +94,49 @@ export async function POST(req: NextRequest) {
       attachments,
     };
 
-    // Send the email
+    // Send the email to the admin
     await transporter.sendMail(mailOptions);
+
+    // Send the auto-reply to the applicant
+    const autoReplyOptions = {
+      from: `"Zynkk Team" <\${process.env.EMAIL}>`,
+      to: email,
+      subject: `Application Received - Welcome to Zynkk!`,
+      html: `
+        <div style="font-family: 'Inter', Helvetica, Arial, sans-serif; background-color: #faf9f6; padding: 40px; color: #0a0f24;">
+          <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 40px; border: 1px solid #e2e8f0; border-top: 4px solid #0C2A92; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+            <h2 style="margin-top: 0; font-size: 24px; color: #0a0f24; letter-spacing: -0.5px;">Thank you for applying to Zynkk!</h2>
+            <p style="color: #475569; font-size: 16px; line-height: 1.6; margin-bottom: 24px;">
+              Hi \${firstName},
+            </p>
+            <p style="color: #475569; font-size: 16px; line-height: 1.6; margin-bottom: 24px;">
+              We have successfully received your internship application. Thanks for showing interest in joining the Zynkk team! Our team is currently reviewing your profile and will reach out to you regarding the next steps shortly.
+            </p>
+            <p style="color: #475569; font-size: 16px; line-height: 1.6; margin-bottom: 32px;">
+              In the meantime, we'd love for you to become a part of our community to stay updated on our latest news, resources, and announcements:
+            </p>
+            
+            <div style="margin-bottom: 32px; text-align: center;">
+              <a href="https://t.me/+Vn9UY9Up_hk1YjBl" style="display: inline-block; background-color: #0088cc; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 500; font-size: 15px; margin-right: 12px; margin-bottom: 12px;">
+                Join our Telegram
+              </a>
+              <a href="https://www.linkedin.com/company/zynkk-org/" style="display: inline-block; background-color: #0077b5; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 500; font-size: 15px; margin-bottom: 12px;">
+                Follow on LinkedIn
+              </a>
+            </div>
+            
+            <div style="border-top: 1px solid #e2e8f0; padding-top: 24px; margin-top: 32px;">
+              <p style="color: #94a3b8; font-size: 14px; margin: 0;">
+                Best regards,<br>
+                <strong>The Zynkk Team</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      `,
+    };
+
+    await transporter.sendMail(autoReplyOptions);
 
     return NextResponse.json({ message: "Application submitted successfully" }, { status: 200 });
   } catch (error) {

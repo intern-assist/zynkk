@@ -41,6 +41,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      data-scroll-behavior="smooth"
     >
       <body className="min-h-full flex flex-col bg-[#050508] text-[#f8fafc] selection:bg-cyan-500/30 selection:text-cyan-200">
         <SmoothScroll>
