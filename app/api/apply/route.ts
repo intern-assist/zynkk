@@ -106,7 +106,7 @@ Portfolio: ${portfolio}
 
     // Send the auto-reply to the applicant
     const autoReplyOptions = {
-      from: `"Zynkk Team" <\${process.env.EMAIL}>`,
+      from: process.env.EMAIL,
       to: email,
       subject: `Application Received - Welcome to Zynkk!`,
       html: `
@@ -114,7 +114,7 @@ Portfolio: ${portfolio}
           <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 40px; border: 1px solid #e2e8f0; border-top: 4px solid #0C2A92; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
             <h2 style="margin-top: 0; font-size: 24px; color: #0a0f24; letter-spacing: -0.5px;">Thank you for applying to Zynkk!</h2>
             <p style="color: #475569; font-size: 16px; line-height: 1.6; margin-bottom: 24px;">
-              Hi \${firstName},
+              Hi ${firstName},
             </p>
             <p style="color: #475569; font-size: 16px; line-height: 1.6; margin-bottom: 24px;">
               We have successfully received your internship application. Thanks for showing interest in joining the Zynkk team! Our team is currently reviewing your profile and will reach out to you regarding the next steps shortly.
