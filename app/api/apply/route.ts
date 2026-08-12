@@ -16,6 +16,8 @@ export async function POST(req: NextRequest) {
     const yearOfStudy = formData.get("yearOfStudy") as string || "";
     const role = formData.get("role") as string || "";
     const portfolio = formData.get("portfolio") as string || "";
+    const linkedin = formData.get("linkedin") as string || "";
+    const telegram = formData.get("telegram") as string || "";
     const whyZynkk = formData.get("whyZynkk") as string || "";
     
     // Extract file
@@ -80,6 +82,14 @@ export async function POST(req: NextRequest) {
                 <td style="padding: 12px 0; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Portfolio</td>
                 <td style="padding: 12px 0; border-bottom: 1px solid #f1f5f9; color: #0C2A92; font-weight: 500;"><a href="${portfolio}" style="color: #0C2A92; text-decoration: none;">${portfolio}</a></td>
               </tr>
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">LinkedIn</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #f1f5f9; color: #0C2A92; font-weight: 500;"><a href="${linkedin}" style="color: #0C2A92; text-decoration: none;">${linkedin}</a></td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Telegram</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #f1f5f9; color: #0a0f24; font-weight: 500;">${telegram}</td>
+              </tr>
             </table>
             
             <div style="margin-top: 30px; background-color: #f8fafc; padding: 20px; border-left: 3px solid #cbd5e1;">
@@ -97,6 +107,8 @@ Email: ${email}
 Phone: ${phone}
 Target Role: ${role}
 Portfolio: ${portfolio}
+LinkedIn: ${linkedin}
+Telegram: ${telegram}
       `,
       attachments,
     };
@@ -124,10 +136,10 @@ Portfolio: ${portfolio}
             </p>
             
             <div style="margin-bottom: 32px; text-align: center;">
-              <a href="https://t.me/+Vn9UY9Up_hk1YjBl" style="display: inline-block; background-color: #0088cc; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 500; font-size: 15px; margin-right: 12px; margin-bottom: 12px;">
+              <a href="https://t.me/+XQ91iku_T0I4ODdl" style="display: inline-block; background-color: #0088cc; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 500; font-size: 15px; margin-right: 12px; margin-bottom: 12px;">
                 Join our Telegram
               </a>
-              <a href="https://www.linkedin.com/company/zynkk-org/" style="display: inline-block; background-color: #0077b5; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 500; font-size: 15px; margin-bottom: 12px;">
+              <a href="https://www.linkedin.com/company/procon-org" style="display: inline-block; background-color: #0077b5; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 500; font-size: 15px; margin-bottom: 12px;">
                 Follow on LinkedIn
               </a>
             </div>
@@ -148,8 +160,8 @@ We have successfully received your internship application. Thanks for showing in
 
 In the meantime, we'd love for you to become a part of our community to stay updated on our latest news, resources, and announcements:
 
-Join our Telegram: https://t.me/+Vn9UY9Up_hk1YjBl
-Follow on LinkedIn: https://www.linkedin.com/company/zynkk-org/
+Join our Telegram: https://t.me/+XQ91iku_T0I4ODdl
+Follow on LinkedIn: https://www.linkedin.com/company/procon-org
 
 Best regards,
 The Zynkk Team

@@ -1,5 +1,5 @@
 import TransitionLink from "./TransitionLink";
-import FooterGame from "./footer-game/FooterGame";
+
 export default function Footer() {
   return (
     <footer className="w-full bg-transparent border-t border-white/10 pt-16 pb-8 px-6 relative z-50 mt-auto">
@@ -35,12 +35,6 @@ export default function Footer() {
         </div>
       </div>
       
-      <div className="w-full border-t border-white/10 mt-8 overflow-hidden relative">
-        <div className="max-w-7xl mx-auto">
-          <FooterGame />
-        </div>
-      </div>
-
       <div className="max-w-7xl mx-auto pt-4 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-white/40 text-[13px]">© {new Date().getFullYear()} Zynkk. All rights reserved.</p>
         <div className="flex gap-4">

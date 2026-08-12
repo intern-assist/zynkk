@@ -235,6 +235,65 @@ export default function ApplyPage() {
                 </div>
               </div>
 
+              {/* Section 3: Connect With Us */}
+              <div className="flex flex-col gap-8 mt-2">
+                <div className="flex items-baseline gap-3 mb-2">
+                  <span className="text-slate-500 font-mono text-[14px] font-medium tracking-wider">03</span>
+                  <h2 className="text-[24px] md:text-[28px] font-bold text-[#0a0f24] tracking-wide uppercase" style={{ fontFamily: 'Impact, sans-serif' }}>
+                    Connect With Us
+                  </h2>
+                </div>
+
+                <p className="text-slate-600 text-[14px] font-medium -mt-4">
+                  Join our community to receive updates on your application status, onboarding details, and exclusive resources.
+                </p>
+
+                <div className="flex flex-col gap-5">
+                  {/* Telegram Checkbox */}
+                  <label className="flex items-start gap-4 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      name="joinedTelegram"
+                      required
+                      className="mt-1 w-5 h-5 accent-[#0a0f24] cursor-pointer flex-shrink-0"
+                    />
+                    <span className="text-[15px] text-slate-700 font-medium leading-relaxed">
+                      I have joined the{" "}
+                      <a
+                        href="https://t.me/+Vn9UY9Up_hk1YjBl"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#0C2A92] font-bold underline underline-offset-2 hover:text-[#0a0f24] transition-colors"
+                      >
+                        Zynkk Telegram Community
+                      </a>
+                      <span className="text-red-500 ml-0.5">*</span>
+                    </span>
+                  </label>
+
+                  {/* LinkedIn Checkbox */}
+                  <label className="flex items-start gap-4 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      name="followedLinkedin"
+                      required
+                      className="mt-1 w-5 h-5 accent-[#0a0f24] cursor-pointer flex-shrink-0"
+                    />
+                    <span className="text-[15px] text-slate-700 font-medium leading-relaxed">
+                      I am following{" "}
+                      <a
+                        href="https://www.linkedin.com/company/zynkk-org/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#0C2A92] font-bold underline underline-offset-2 hover:text-[#0a0f24] transition-colors"
+                      >
+                        Zynkk on LinkedIn
+                      </a>
+                      <span className="text-red-500 ml-0.5">*</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
               {errorMsg && (
                 <div className="bg-[#5c0d11] text-white border border-[#5c0d11] text-[12px] font-bold uppercase tracking-widest p-5 text-center mt-2 shadow-2xl">
                   {errorMsg}
