@@ -23,8 +23,59 @@ export async function POST(req: NextRequest) {
     // Extract file
     const resumeFile = formData.get("resume") as File | null;
 
-    if (!firstName || !email) {
-      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    const joinedTelegram = formData.get("joinedTelegram") === "on";
+    const followedLinkedin = formData.get("followedLinkedin") === "on";
+
+    // Validate that all fields are filled
+    if (
+      !firstName.trim() ||
+      !lastName.trim() ||
+      !email.trim() ||
+      !phone.trim() ||
+      !age.trim() ||
+      !city.trim() ||
+      !college.trim() ||
+      !role.trim() ||
+      !portfolio.trim() ||
+      !whyZynkk.trim() ||
+      !resumeFile
+    ) {
+      return NextResponse.json({ error: "All fields are mandatory and must be filled." }, { status: 400 });
+    }
+
+    // Validate Email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json({ error: "Please provide a valid email address." }, { status: 400 });
+    }
+
+    // Validate Phone (at least 10 digits)
+    const phoneCleaned = phone.replace(/[^0-9]/g, "");
+    if (phoneCleaned.length < 10) {
+      return NextResponse.json({ error: "Please provide a valid phone number (minimum 10 digits)." }, { status: 400 });
+    }
+
+    // Validate Age (must be a realistic number)
+    const ageNum = parseInt(age, 10);
+    if (isNaN(ageNum) || ageNum < 16 || ageNum > 99) {
+      return NextResponse.json({ error: "Please enter a valid age (between 16 and 99)." }, { status: 400 });
+    }
+
+    // Validate URLs (portfolio)
+    try {
+      new URL(portfolio);
+    } catch (_) {
+      return NextResponse.json({ error: "Please provide a valid Portfolio / GitHub URL." }, { status: 400 });
+    }
+
+    // Validate "Why Zynkk" length
+    if (whyZynkk.trim().length < 15) {
+      return NextResponse.json({ error: "Please write a more detailed response for 'Why Zynkk?' (minimum 15 characters)." }, { status: 400 });
+    }
+
+    // Validate Checkboxes
+    if (!joinedTelegram || !followedLinkedin) {
+      return NextResponse.json({ error: "You must join our Telegram and follow us on LinkedIn to apply." }, { status: 400 });
     }
 
     // Configure Nodemailer transporter
