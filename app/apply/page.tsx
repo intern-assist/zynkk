@@ -136,11 +136,11 @@ export default function ApplyPage() {
                   {/* Row 1 */}
                   <div className="flex flex-col md:flex-row gap-6 md:gap-12">
                     <div className="w-full relative">
-                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">First Name</label>
+                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">First Name <span className="text-red-500">*</span></label>
                       <input type="text" name="firstName" required className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] placeholder-slate-400 focus:outline-none focus:border-[#0a0f24] transition-colors" placeholder="John" />
                     </div>
                     <div className="w-full relative">
-                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Last Name</label>
+                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Last Name <span className="text-red-500">*</span></label>
                       <input type="text" name="lastName" required className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] placeholder-slate-400 focus:outline-none focus:border-[#0a0f24] transition-colors" placeholder="Doe" />
                     </div>
                   </div>
@@ -148,36 +148,36 @@ export default function ApplyPage() {
                   {/* Row 2 */}
                   <div className="flex flex-col md:flex-row gap-6 md:gap-12">
                     <div className="w-full relative">
-                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Email Address</label>
+                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Email Address <span className="text-red-500">*</span></label>
                       <input type="email" name="email" required className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] placeholder-slate-400 focus:outline-none focus:border-[#0a0f24] transition-colors" placeholder="johndoe@gmail.com" />
                     </div>
                     <div className="w-full relative">
-                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Whatsapp Number</label>
-                      <input type="tel" name="phone" className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] placeholder-slate-400 focus:outline-none focus:border-[#0a0f24] transition-colors" placeholder="+91 XXXXX XXXXX" />
+                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Whatsapp Number <span className="text-red-500">*</span></label>
+                      <input type="tel" name="phone" required pattern="[+]?[0-9\s-]{10,20}" title="Please enter a valid phone number (at least 10 digits)" className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] placeholder-slate-400 focus:outline-none focus:border-[#0a0f24] transition-colors" placeholder="+91 XXXXX XXXXX" />
                     </div>
                   </div>
 
                   {/* Row 3 */}
                   <div className="flex flex-col md:flex-row gap-6 md:gap-12">
                     <div className="w-full relative">
-                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">City</label>
-                      <input type="text" name="city" className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] placeholder-slate-400 focus:outline-none focus:border-[#0a0f24] transition-colors" placeholder="Enter your city" />
+                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">City <span className="text-red-500">*</span></label>
+                      <input type="text" name="city" required className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] placeholder-slate-400 focus:outline-none focus:border-[#0a0f24] transition-colors" placeholder="Enter your city" />
                     </div>
                     <div className="w-full relative">
-                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Age</label>
-                      <input type="number" name="age" className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] placeholder-slate-400 focus:outline-none focus:border-[#0a0f24] transition-colors" placeholder="21" />
+                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Age <span className="text-red-500">*</span></label>
+                      <input type="number" name="age" required min="16" max="99" className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] placeholder-slate-400 focus:outline-none focus:border-[#0a0f24] transition-colors" placeholder="21" />
                     </div>
                   </div>
 
                   {/* Row 4 */}
                   <div className="flex flex-col md:flex-row gap-6 md:gap-12">
                     <div className="w-full relative">
-                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">College / Institution</label>
-                      <input type="text" name="college" className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] placeholder-slate-400 focus:outline-none focus:border-[#0a0f24] transition-colors" placeholder="Name of your university" />
+                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">College / Institution <span className="text-red-500">*</span></label>
+                      <input type="text" name="college" required className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] placeholder-slate-400 focus:outline-none focus:border-[#0a0f24] transition-colors" placeholder="Name of your university" />
                     </div>
                     <div className="w-full relative pr-0 md:pr-6">
-                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Year of Study</label>
-                      <select name="yearOfStudy" className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] focus:outline-none focus:border-[#0a0f24] transition-colors appearance-none cursor-pointer">
+                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Year of Study <span className="text-red-500">*</span></label>
+                      <select name="yearOfStudy" required className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] focus:outline-none focus:border-[#0a0f24] transition-colors appearance-none cursor-pointer">
                         <option value="1st Year">1st Year</option>
                         <option value="2nd Year">2nd Year</option>
                         <option value="3rd Year">3rd Year</option>
@@ -204,8 +204,8 @@ export default function ApplyPage() {
                 <div className="flex flex-col gap-6">
                   <div className="flex flex-col md:flex-row gap-6 md:gap-12">
                     <div className="w-full relative">
-                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Target Role</label>
-                      <select name="role" className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] focus:outline-none focus:border-[#0a0f24] transition-colors appearance-none cursor-pointer">
+                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Target Role <span className="text-red-500">*</span></label>
+                      <select name="role" required className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] focus:outline-none focus:border-[#0a0f24] transition-colors appearance-none cursor-pointer">
                         <option value="frontend">Frontend Developer</option>
                         <option value="backend">Backend Developer</option>
                         <option value="fullstack">Full Stack Developer</option>
@@ -217,19 +217,19 @@ export default function ApplyPage() {
                       </div>
                     </div>
                     <div className="w-full relative">
-                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Portfolio / GitHub URL</label>
-                      <input type="url" name="portfolio" className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] placeholder-slate-400 focus:outline-none focus:border-[#0a0f24] transition-colors" placeholder="https://..." />
+                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Portfolio / GitHub URL <span className="text-red-500">*</span></label>
+                      <input type="url" name="portfolio" required className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] placeholder-slate-400 focus:outline-none focus:border-[#0a0f24] transition-colors" placeholder="https://..." />
                     </div>
                   </div>
 
                   <div className="flex flex-col md:flex-row gap-6 md:gap-12 mt-2">
                     <div className="w-full relative">
-                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Resume / CV</label>
-                      <input type="file" name="resume" accept=".pdf,.doc,.docx" className="w-full bg-transparent border-b border-slate-300 pb-2 text-[14px] text-[#0a0f24] file:mr-4 file:py-1 file:px-3 file:rounded-none file:border-0 file:text-[10px] file:font-bold file:uppercase file:tracking-widest file:bg-slate-200 file:text-slate-700 hover:file:bg-slate-300 focus:outline-none focus:border-[#0a0f24] transition-colors cursor-pointer" />
+                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Resume / CV <span className="text-red-500">*</span></label>
+                      <input type="file" name="resume" required accept=".pdf,.doc,.docx" className="w-full bg-transparent border-b border-slate-300 pb-2 text-[14px] text-[#0a0f24] file:mr-4 file:py-1 file:px-3 file:rounded-none file:border-0 file:text-[10px] file:font-bold file:uppercase file:tracking-widest file:bg-slate-200 file:text-slate-700 hover:file:bg-slate-300 focus:outline-none focus:border-[#0a0f24] transition-colors cursor-pointer" />
                     </div>
                     <div className="w-full relative">
-                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Why Zynkk?</label>
-                      <textarea name="whyZynkk" rows={2} className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] placeholder-slate-400 focus:outline-none focus:border-[#0a0f24] transition-colors resize-none" placeholder="Briefly tell us what you hope to achieve..."></textarea>
+                      <label className="block text-[10px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Why Zynkk? <span className="text-red-500">*</span></label>
+                      <textarea name="whyZynkk" required minLength={15} rows={2} className="w-full bg-transparent border-b border-slate-300 pb-2 text-[16px] text-[#0a0f24] placeholder-slate-400 focus:outline-none focus:border-[#0a0f24] transition-colors resize-none" placeholder="Briefly tell us what you hope to achieve..."></textarea>
                     </div>
                   </div>
                 </div>
